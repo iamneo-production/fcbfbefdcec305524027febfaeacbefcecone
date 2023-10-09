@@ -17,13 +17,12 @@ public class MedicineController {
     @PostMapping
     public ResponseEntity<Boolean> addMedicine(@RequestBody Medicine medicine) {
         boolean added = medicineService.addMedicine(medicine);
-            return new ResponseEntity<>(true, HttpStatus.CREATED);
+        return new ResponseEntity<>(true, HttpStatus.OK);
     }
 
     @PutMapping("/{medicineId}")
-    public ResponseEntity<Medicine> updateMedicine(@PathVariable("medicineId") int medicineId,
-            @RequestBody Medicine updatedMedicine) {
+    public ResponseEntity<Medicine> updateMedicine(@PathVariable("medicineId") int medicineId, @RequestBody Medicine updatedMedicine) {
         Medicine updated = medicineService.updateMedicine(medicineId, updatedMedicine);
-            return new ResponseEntity<>(updated, HttpStatus.OK);
+        return new ResponseEntity<>(updated, HttpStatus.OK);
     }
 }
