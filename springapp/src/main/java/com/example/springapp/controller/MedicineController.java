@@ -25,7 +25,7 @@ public class MedicineController {
     }
 
     @PutMapping("/{medicineId}")
-    public ResponseEntity<Medicine> updateMedicine(@PathVariable int medicineId,
+    public ResponseEntity<Medicine> updateMedicine(@PathVariable("medicineId") int medicineId,
             @RequestBody Medicine updatedMedicine) {
         Medicine updated = medicineService.updateMedicine(medicineId, updatedMedicine);
         if (updated != null) {
