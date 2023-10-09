@@ -14,7 +14,7 @@ public class MedicineController {
     @Autowired
     private MedicineService medicineService;
 
-    @PostMapping
+    @PostMapping("/")
     public ResponseEntity<Boolean> addMedicine(@RequestBody Medicine medicine) {
         boolean added = medicineService.addMedicine(medicine);
         return new ResponseEntity<>(true, HttpStatus.OK);

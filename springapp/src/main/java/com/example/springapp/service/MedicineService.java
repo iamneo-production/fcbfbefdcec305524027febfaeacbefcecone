@@ -15,7 +15,7 @@ public class MedicineService {
     private int nextMedicineId = 1;
 
     public boolean addMedicine(Medicine medicine) {
-        medicine.setMedicineId(nextMedicineId++);
+        medicine.setMedicineId(medicine.getMedicineId());
         medicineMap.put(medicine.getMedicineId(), medicine);
         return true; // Medicine added successfully
     }

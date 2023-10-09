@@ -1,6 +1,8 @@
 package com.example.springapp.model;
 
+@Entity
 public class Medicine {
+    @Id
     private int medicineId;
     private String medicineName;
     private float price;
